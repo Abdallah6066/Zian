@@ -36,7 +36,7 @@
 
         /* الشريط الوردي */
         .pink-bar {
-            background-color: #e6007e;
+            background-color: #a3005a; /* لون أغمق قليلاً ليطابق الصورة */
             color: white;
             text-align: center;
             padding: 10px 15px;
@@ -51,10 +51,9 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: white;
+            background: #f7f7f7;
             min-height: 100vh;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
         h1 {
@@ -64,7 +63,7 @@
             font-weight: 900;
         }
 
-        /* تصميم بانر زين (CSS) لكي لا تتعطل الصورة */
+        /* تصميم بانر زين (CSS) */
         .zain-banner {
             background: linear-gradient(135deg, #111 0%, #333 100%);
             border-radius: 8px;
@@ -74,30 +73,12 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
             border: 2px solid #ffd700;
         }
-        .banner-text h2 {
-            color: #ffd700;
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-        .banner-text h1 {
-            color: #ffd700;
-            font-size: 35px;
-            text-align: right;
-            margin: 5px 0;
-        }
-        .banner-text p {
-            font-size: 12px;
-            color: #ccc;
-        }
-        .banner-logo {
-            font-size: 30px;
-            font-weight: 900;
-            color: white;
-        }
+        .banner-text h2 { color: #ffd700; font-size: 20px; margin-bottom: 5px; }
+        .banner-text h1 { color: #ffd700; font-size: 35px; text-align: right; margin: 5px 0; }
+        .banner-text p { font-size: 12px; color: #ccc; }
+        .banner-logo { font-size: 30px; font-weight: 900; color: white; }
 
         /* الاستبيان */
         .survey-question {
@@ -121,7 +102,13 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* التعليقات المزيفة */
+        /* التعليقات */
+        .comments-container {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
         .comments-header {
             display: flex;
             justify-content: space-between;
@@ -129,9 +116,9 @@
             padding: 10px;
             font-weight: bold;
             color: #1a73e8;
-            margin-top: 20px;
             border-top: 1px solid #ddd;
             font-size: 14px;
+            margin-bottom: 10px;
         }
         .comment {
             display: flex;
@@ -166,48 +153,76 @@
             margin: 30px auto;
             animation: spin 1s linear infinite;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .verify-text {
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .verify-text { text-align: center; font-weight: bold; font-size: 16px; margin-bottom: 20px; }
 
-        /* شاشة التهنئة (المال) */
-        .congrats-text {
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            margin: 15px 0;
-            line-height: 1.6;
+        /* شاشة التهنئة الجديدة (الاحتفال) */
+        #page-congrats {
+            background: url('https://www.transparenttextures.com/patterns/confetti.png') repeat; /* خلفية احتفال خفيفة */
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
         }
         
-        /* صورة المال (رابط دائم يعمل) */
         .money-img {
             width: 100%;
-            max-width: 350px;
+            max-width: 300px;
             display: block;
             margin: 15px auto;
         }
+        
+        .congrats-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #555;
+            margin-bottom: 10px;
+        }
 
-        /* صندوق المشاركة */
+        .win-text {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .rules-list {
+            text-align: right;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding-right: 10px;
+        }
+
+        .btn-continue-main {
+            background-color: #e6007e;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* شاشة المشاركة وشريط التقدم */
         .share-box {
             background-color: #f8f9fa;
             border: 1px solid #e9ecef;
             border-radius: 10px;
             padding: 20px;
             text-align: right;
-            margin-top: 15px;
-        }
-        .share-box p {
-            font-size: 15px;
-            margin-bottom: 10px;
-            line-height: 1.6;
-            font-weight: bold;
+            margin-top: 20px;
         }
         .btn-share {
             display: flex;
@@ -227,68 +242,25 @@
         .btn-wa { background-color: #25D366; }
         .btn-msg { background: linear-gradient(45deg, #0084FF, #8a2be2); }
 
-        .progress-text {
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            margin: 15px 0 5px 0;
-        }
+        .progress-text { text-align: center; font-size: 14px; font-weight: bold; margin: 15px 0 5px 0; }
         .progress-container {
-            width: 100%;
-            background-color: #e0e0e0;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 15px;
-            position: relative;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden;
+            width: 100%; background-color: #e0e0e0; height: 35px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 15px; position: relative;
+            border: 1px solid #ccc; border-radius: 4px; overflow: hidden;
         }
         .progress-fill {
-            position: absolute;
-            top: 0; right: 0;
-            height: 100%;
-            background-color: #28a745; /* أخضر يملأ ببطء */
-            width: 0%;
-            transition: width 0.8s ease-in-out; /* حركة بطيئة */
-            z-index: 1;
+            position: absolute; top: 0; right: 0; height: 100%;
+            background-color: #28a745; width: 0%; transition: width 0.8s ease-in-out; z-index: 1;
         }
-        .progress-text-val {
-            position: relative;
-            z-index: 2;
+        .progress-text-val { position: relative; z-index: 2; }
+        
+        .btn-continue-disabled {
+            background-color: #ff99cc;
+            color: white; width: 100%; padding: 15px; border-radius: 6px;
+            font-size: 18px; font-weight: bold; border: none; cursor: not-allowed;
+            margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 10px;
         }
-        .btn-continue {
-            background-color: #ff99cc; /* باهت في البداية */
-            color: white;
-            width: 100%;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            cursor: not-allowed;
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: 0.3s;
-        }
-
-        /* شاشة الهدايا النهائية */
-        .gift-modal {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            background: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .gift-modal h2 { font-size: 22px; margin-bottom: 10px; }
-        .gift-modal p { font-size: 15px; margin-bottom: 15px; line-height: 1.6; }
 
         .hidden { display: none !important; }
     </style>
@@ -300,7 +272,7 @@
     </div>
 
     <div class="pink-bar">
-        <span>2026/11/17</span>
+        <span>2026/11/22</span>
         <span>زين - هدية الذكرى الثلاثين!</span>
     </div>
 
@@ -309,9 +281,8 @@
         <!-- ================= 1. الاستبيان ================= -->
         <div id="page-survey">
             <h1 style="font-size: 22px;">تهانينا!</h1>
-            <p style="text-align: center; font-weight: bold; font-size: 15px; margin-bottom: 15px;">زين - هدية الذكرى الثلاثين!<br>املأ هذا الاستبيان للحصول على فرصة الفوز بـ 900$.</p>
+            <p style="text-align: center; font-weight: bold; font-size: 15px; margin-bottom: 15px;">زين - هدية الذكرى الثلاثين!<br>املأ هذا الاستبيان للحصول على فرصة الفوز بـ 50,000 ج.س.</p>
             
-            <!-- بانر زين (تم تصميمه ليعمل دائماً) -->
             <div class="zain-banner">
                 <div class="banner-logo">zain</div>
                 <div class="banner-text">
@@ -350,20 +321,79 @@
                 <button class="btn-option" onclick="showVerification()">أفضل عدم الإفصاح</button>
             </div>
 
-            <!-- التعليقات -->
-            <div class="comments-header"><span>تعليقات</span><span>10 / 198</span></div>
-            <div class="comment">
-                <img src="https://i.pravatar.cc/150?img=11" alt="User">
-                <div class="comment-content">
-                    <h4>عبدالله الشيخ الصديق آل الشيخ</h4>
-                    <p>لم أصدق في البداية، لكني استلمت الجائزة فعلاً. شكراً زين على هذه المناسبة الرائعة!</p>
+            <!-- التعليقات (المحدثة) -->
+            <div class="comments-container">
+                <div class="comments-header"><span>تعليقات</span><span>10 / 198</span></div>
+                
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="User">
+                    <div class="comment-content">
+                        <h4>عبدالله الشيخ الصديق آل الشيخ</h4>
+                        <p>لم أصدق في البداية، لكني استلمت الجائزة فعلاً. شكراً زين على هذه المناسبة الرائعة!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="comment">
-                <img src="https://i.pravatar.cc/150?img=5" alt="User">
-                <div class="comment-content">
-                    <h4>Raya'n Mo'awya</h4>
-                    <p>شاركت في الاستبيان وفزت بـ 900$، تجربة ممتازة وسأخبر صديقاتي بها.</p>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="User">
+                    <div class="comment-content">
+                        <h4>Raya'n Mo'awya</h4>
+                        <p>شاركت في الاستبيان وفزت بـ 50,000 ج.س، تجربة ممتازة وسأخبر صديقاتي بها.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="User">
+                    <div class="comment-content">
+                        <h4>خالد قادم</h4>
+                        <p>ما توقعت أكسب، لكن المبلغ وصلني بسرعة. مبروك علينا بالذكرى الثلاثين!</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=14" alt="User">
+                    <div class="comment-content">
+                        <h4>عبدالرافع علي الحسنابي</h4>
+                        <p>فعلاً زين شركة محترمة، استلمت 50,000 ج.س بدون أي تعقيد.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=15" alt="User">
+                    <div class="comment-content">
+                        <h4>عصام ابوالقاسم الغفري</h4>
+                        <p>أول مرة أشارك في فعالية حقيقية مثل هذه، الجائزة وصلت والحمد لله.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=33" alt="User">
+                    <div class="comment-content">
+                        <h4>ود العيس</h4>
+                        <p>استلمت ج.س 50,000 وأنا سعيد جداً، نتمنى المزيد من الفعاليات مثل هذه بمناسبة الذكرى الثلاثين.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=52" alt="User">
+                    <div class="comment-content">
+                        <h4>ثابت الأزير محجوب الأحسن</h4>
+                        <p>تهانينا لزين بالذكرى الثلاثين، وشكراً على الهدية التي استلمتها.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=59" alt="User">
+                    <div class="comment-content">
+                        <h4>You Sif Awad</h4>
+                        <p>والله شيء جميل، زين دائماً تفاجئنا بالعروض المميزة.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=60" alt="User">
+                    <div class="comment-content">
+                        <h4>محمد مكي أحمد مكي</h4>
+                        <p>جربت حظي ولم أخسر شيئاً، بل كسبت ج.س 50,000. أنصح الجميع بالمشاركة.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=68" alt="User">
+                    <div class="comment-content">
+                        <h4>الباحث عن السكينة</h4>
+                        <p>في عمري هذا نادراً ما أثق بالعروض، لكن هذه المرة زين أثبتت مصداقيتها.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -375,21 +405,42 @@
             <p class="verify-text">لقد أجبت عن جميع الأسئلة الأربعة</p>
         </div>
 
-        <!-- ================= 3. شاشة التهنئة بالفوز (المال) ================= -->
+        <!-- ================= 3. شاشة التهنئة (الاحتفال والنقود السودانية) ================= -->
         <div id="page-congrats" class="hidden">
-            <h1>تهانينا!</h1>
+            <div class="congrats-title">تهانينا</div>
             
-            <!-- صورة النقود (رابط يعمل دائماً) -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/US_100_obverse_high-res.jpg/800px-US_100_obverse_high-res.jpg" class="money-img" alt="Money">
+            <!-- صورة الجنيه السوداني (محاكاة) -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Sudanese_Pound_50_2020_obverse.jpg/800px-Sudanese_Pound_50_2020_obverse.jpg" class="money-img" alt="Sudanese Pounds">
             
-            <div class="congrats-text">
-                مكافأتك هي: 900$، يرجى اتباع التعليمات في الصفحة التالية للمطالبة بمكافأتك!
+            <div class="win-text">أحسنت! لقد ربحت ج.س 50,000</div>
+
+            <div class="rules-list">
+                <p>القواعد:</p>
+                <p>1. شارك هذه الفعالية مع 5 مجموعات أو 20 صديقاً!</p>
+                <p>2. بمجرد وصول حالة دعوتك إلى 100%، يمكنك المطالبة بهديتك!</p>
+                <p>3. ستتلقى هديتك خلال 5-7 أيام.</p>
             </div>
 
-            <div class="share-box">
-                <p>1. شارك مع 5 مجموعات مختلفة أو 20 صديقًا (انقر على الأيقونات أدناه).</p>
-                <p>2. انقر على زر "متابعة" للمطالبة بمكافأتك.</p>
+            <button class="btn-continue-main" onclick="showSharePage()">متابعة <span>➤</span></button>
+            
+            <!-- التعليق السفلي -->
+            <div style="margin-top: 20px;">
+                <div class="comment">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="User">
+                    <div class="comment-content">
+                        <h4>Raya'n Mo'awya</h4>
+                        <p>شاركت في الاستبيان وفزت بـ 50,000 ج.س، تجربة ممتازة وسأخبر صديقاتي بها.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- ================= 4. شاشة المشاركة لتفعيل الجائزة ================= -->
+        <div id="page-share" class="hidden">
+            <h1 style="font-size: 22px;">الخطوة الأخيرة!</h1>
+            <p style="text-align: center; font-weight: bold; font-size: 15px; margin-bottom: 20px;">يجب عليك مشاركة الرابط مع 20 صديقاً لتفعيل استلام الجائزة.</p>
+
+            <div class="share-box">
                 <button class="btn-share btn-wa" onclick="shareApp('wa')">WhatsApp <span>📞</span></button>
                 <button class="btn-share btn-msg" onclick="shareApp('msg')">Messenger <span>💬</span></button>
 
@@ -400,23 +451,7 @@
                     <span class="progress-text-val" id="progress-text">0%</span>
                 </div>
 
-                <button class="btn-continue" id="btn-continue" onclick="showGifts()">متابعة <span>➤</span></button>
-            </div>
-        </div>
-
-        <!-- ================= 4. شاشة صندوق الهدايا ================= -->
-        <div id="page-gifts" class="hidden" style="padding-top: 20px;">
-            <!-- تصميم بديل لصورة الفريق لضمان عملها -->
-            <div style="background: #eee; height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: #888;">
-                [ صورة فريق زين هنا ]
-            </div>
-
-            <div class="gift-modal">
-                <h2>تهانينا</h2>
-                <p>تم حفظ إجابتك!</p>
-                <p style="font-weight: bold; font-size: 18px;">ستحصل على فرصة للفوز بـ 900$.</p>
-                <p>يجب أن تختار أن صندوق الهدايا الذي يحتوي على الجائزة. لديك 3 فرص. حظًا موفقًا!</p>
-                <button class="btn-continue" style="margin-top: 20px; background-color: #e6007e; cursor: pointer;">متابعة <span>➤</span></button>
+                <button class="btn-continue-disabled" id="btn-continue" onclick="alert('جاري معالجة طلبك... شكراً لمشاركتك!')">متابعة <span>➤</span></button>
             </div>
         </div>
 
@@ -425,7 +460,7 @@
     <script>
         let progress = 0;
         const urlToShare = 'https://nzhds.buzz/unJB';
-        const textToShare = '🎉 زين تحتفل بمرور 30 عاماً! شارك في الاستبيان واحصل على فرصة للفوز بـ 900$. سارع بالدخول: ' + urlToShare;
+        const textToShare = '🎉 زين تحتفل بمرور 30 عاماً! شارك في الاستبيان واحصل على فرصة للفوز بـ 50,000 ج.س. سارع بالدخول: ' + urlToShare;
 
         // التنقل بين الأسئلة
         function nextQuestion(currentQ) {
@@ -444,10 +479,17 @@
             }, 3000); // 3 ثواني تحميل
         }
 
+        // الانتقال لصفحة المشاركة
+        function showSharePage() {
+            document.getElementById('page-congrats').classList.add('hidden');
+            document.getElementById('page-share').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
         // المشاركة (تزيد 5% فقط مع كل ضغطة)
         function shareApp(platform) {
             if (progress < 100) {
-                progress += 5; // كل مشاركة تزيد 5% فقط
+                progress += 5; // 20 ضغطة لكتمال الشريط
                 if (progress > 100) progress = 100;
                 updateProgress();
             }
@@ -467,20 +509,10 @@
             // عندما يصل إلى 100% (بعد 20 ضغطة)، نغير لون الزر ليصبح قابلاً للنقر
             if (progress >= 100) {
                 let btn = document.getElementById('btn-continue');
-                btn.style.backgroundColor = '#e6007e'; // اللون الوردي القوي
+                btn.style.backgroundColor = '#e6007e'; 
                 btn.style.cursor = 'pointer';
+                btn.classList.remove('btn-continue-disabled');
             }
-        }
-
-        // شاشة الهدايا النهائية
-        function showGifts() {
-            if (progress < 100) {
-                alert('يرجى الاستمرار في مشاركة الرابط مع أصدقائك حتى يصل التقدم إلى 100%!');
-                return;
-            }
-            document.getElementById('page-congrats').classList.add('hidden');
-            document.getElementById('page-gifts').classList.remove('hidden');
-            window.scrollTo(0, 0); // العودة لأعلى الصفحة
         }
     </script>
 </body>
